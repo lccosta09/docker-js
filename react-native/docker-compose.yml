@@ -1,0 +1,17 @@
+version: "3"
+services:
+  workspace:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    image: lcorreia/react_native_workspace
+    container_name: react_native.workspace
+    volumes:
+      - ./projects:/var/wwww
+    ports:
+      - "3001:3000"
+    networks:
+      - "lcorreia"
+networks:
+  lcorreia:
+    driver: bridge

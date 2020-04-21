@@ -4,7 +4,7 @@ RUN apk add --update nodejs nodejs-npm
 
 RUN apk add --update bash
 
-RUN npm install -g create-react-app
+RUN npm install -g react-native-cli
 
 RUN apk update
 
@@ -15,4 +15,4 @@ EXPOSE 3000
 CMD tail -f /dev/null
 
 # Start a new project
-# create-react-app <project_name>
+# react-native init <project_name>
