@@ -1,0 +1,19 @@
+version: "3"
+services:
+  workspace:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    image: lcorreia/vue_worspace
+    container_name: vue.workspace
+    volumes:
+      - ./projects:/var/www
+    ports:
+      - "3003:3000"
+      - "8003:8000"
+      - "8083:8080"
+    networks:
+      - "lcorreia"
+networks:
+  lcorreia:
+    driver: bridge

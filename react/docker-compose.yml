@@ -1,0 +1,17 @@
+version: "3"
+services:
+  workspace:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    image: lcorreia/react_workspace
+    container_name: react.workspace
+    volumes:
+      - ./projects:/var/wwww
+    ports:
+      - "3000:3000"
+    networks:
+      - "lcorreia"
+networks:
+  lcorreia:
+    driver: bridge
